@@ -9,14 +9,22 @@ const api = supertest(app)
 
 const seedBooks = [
   {
-    author: 'Test Surname',
-    title: false,
-    published: 1999,
+    title: "Liian myöhään vesipääsky",
+    originalTitle: "Too Late the Phalarope",
+    publishedYear: 1954,
+    originalPublishedYear: 1953,
+    seriesNumber: 1,
+    originalLanguage: "englanti",
+    translator: "Jouko Linturi"
   },
   {
-    author: 'Second Testname',
-    title: true,
-    published: 1875,
+    title: "Kerro minulle, Zorbas",
+    originalTitle: "Víos ke politía tu Aléksi Zorbá",
+    publishedYear: 1954,
+    originalPublishedYear: 1946,
+    seriesNumber: 2,
+    originalLanguage: "kreikka",
+    translator: "Vappu Roos"
   },
 ]
 
@@ -43,11 +51,11 @@ test('there are two books', async () => {
   assert.strictEqual(response.body.length, 2)
 })
 
-test('the first book is written in 1999', async () => {
+test('the first book is written in 1954', async () => {
   const response = await api.get('/api/books')
 
-  const contents = response.body.map((e) => e.published)
-  assert(contents.includes(1999))
+  const contents = response.body.map((e) => e.publishedYear)
+  assert(contents.includes(1954))
 })
 
 after(async () => {
