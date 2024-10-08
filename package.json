@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "test:migrate": "cross-env NODE_ENV=test nodemon index.js",
     "test": "cross-env NODE_ENV=test node --test"
   },
   "author": "",
@@ -14,12 +15,12 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "pg": "^8.11.5",
-    "sequelize": "^6.37.3"
+    "sequelize": "^6.37.3",
+    "umzug": "^3.8.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
     "nodemon": "^3.1.0",
-    "sequelize-cli": "^6.6.2",
     "supertest": "^7.0.0"
   }
 }

@@ -12,6 +12,7 @@ Book.init(
     },
     title: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
     originalTitle: {
       type: DataTypes.TEXT,
@@ -24,6 +25,7 @@ Book.init(
     },
     seriesNumber: {
       type: DataTypes.INTEGER,
+      allowNull: false,
     },
     originalLanguage: {
       type: DataTypes.TEXT,

@@ -12,10 +12,11 @@ Review.init(
     },
     numericalScore: {
       type: DataTypes.INTEGER,
+      allowNull: false,
     },
     description: {
       type: DataTypes.TEXT,
-    }
+    },
   },
   {
     sequelize,

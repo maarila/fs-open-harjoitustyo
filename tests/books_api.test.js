@@ -1,6 +1,6 @@
 const { test, beforeEach, after } = require('node:test')
 const assert = require('node:assert')
-const { sequelize } = require('../util/db')
+const { sequelize, connectToDatabase } = require('../util/db')
 const supertest = require('supertest')
 const Book = require('../models/book')
 const app = require('../app')
@@ -9,22 +9,22 @@ const api = supertest(app)
 
 const seedBooks = [
   {
-    title: "Liian myöhään vesipääsky",
-    originalTitle: "Too Late the Phalarope",
+    title: 'Liian myöhään vesipääsky',
+    originalTitle: 'Too Late the Phalarope',
     publishedYear: 1954,
     originalPublishedYear: 1953,
     seriesNumber: 1,
-    originalLanguage: "englanti",
-    translator: "Jouko Linturi"
+    originalLanguage: 'englanti',
+    translator: 'Jouko Linturi',
   },
   {
-    title: "Kerro minulle, Zorbas",
-    originalTitle: "Víos ke politía tu Aléksi Zorbá",
+    title: 'Kerro minulle, Zorbas',
+    originalTitle: 'Víos ke politía tu Aléksi Zorbá',
     publishedYear: 1954,
     originalPublishedYear: 1946,
     seriesNumber: 2,
-    originalLanguage: "kreikka",
-    translator: "Vappu Roos"
+    originalLanguage: 'kreikka',
+    translator: 'Vappu Roos',
   },
 ]
 

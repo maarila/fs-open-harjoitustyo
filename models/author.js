@@ -10,12 +10,9 @@ Author.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    firstName: {
+    name: {
       type: DataTypes.TEXT,
       allowNull: false,
-    },
-    lastName: {
-      type: DataTypes.TEXT,
     },
   },
   {
