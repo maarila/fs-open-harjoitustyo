@@ -7,4 +7,5 @@
 | 3.10. | 1,5  | pohja backendin testaamiselle, refaktorointia |
 | 4.10. | 1,5  | tietomallin hahmottelua, pohjaa seedaamiselle, refaktorointia |
 | 8.10. | 2  | tietomalli v1, migraatiot, seedaus, refaktorointia |
-| yht   | 7  | |
+| 13.10. | 1,5  | frontendin pohja |
+| yht   | 8,5  | |
