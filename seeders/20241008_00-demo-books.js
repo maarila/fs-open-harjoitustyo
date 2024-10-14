@@ -21,16 +21,16 @@ const seedBooks = [
     created_at: new Date(),
     updated_at: new Date(),
   },
-]
+];
 
 async function up({ context: queryInterface }) {
-  await queryInterface.bulkInsert('books', seedBooks)
+  await queryInterface.bulkInsert('books', seedBooks);
 }
 
 async function down({ context: queryInterface }) {
   await queryInterface.bulkDelete('books', {
     seriesNumber: seedBooks.map((book) => book.series_number),
-  })
+  });
 }
 
-module.exports = { up, down }
+module.exports = { up, down };

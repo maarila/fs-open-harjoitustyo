@@ -8,4 +8,5 @@
 | 4.10. | 1,5  | tietomallin hahmottelua, pohjaa seedaamiselle, refaktorointia |
 | 8.10. | 2  | tietomalli v1, migraatiot, seedaus, refaktorointia |
 | 13.10. | 1,5  | frontendin pohja |
-| yht   | 8,5  | |
+| 14.10. | 2  | pohja frontendin testaamiselle, ESLint, Prettier |
+| yht   | 10,5  | |

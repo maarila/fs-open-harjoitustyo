@@ -3,7 +3,7 @@ const Book = ({ book }) => {
     <p>
       {book.title} ({book.originalTitle}, {book.originalPublishedYear})
     </p>
-  )
-}
+  );
+};
 
-export default Book
+export default Book;

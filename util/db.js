@@ -1,11 +1,11 @@
-const Sequelize = require('sequelize')
-const { DATABASE_URL } = require('./config')
-const { Umzug, SequelizeStorage } = require('umzug')
+const Sequelize = require('sequelize');
+const { DATABASE_URL } = require('./config');
+const { Umzug, SequelizeStorage } = require('umzug');
 
 const sequelize = new Sequelize(DATABASE_URL, {
   logging: console.log,
   dialect: 'postgres',
-})
+});
 
 const runMigrations = async () => {
   const migrator = new Umzug({
@@ -15,14 +15,14 @@ const runMigrations = async () => {
     storage: new SequelizeStorage({ sequelize, tableName: 'migrations' }),
     context: sequelize.getQueryInterface(),
     logger: console,
-  })
+  });
 
-  const migrations = await migrator.up()
+  const migrations = await migrator.up();
 
   console.log('Migrations up to date', {
     files: migrations.map((migration) => migration.name),
-  })
-}
+  });
+};
 
 const runSeeder = async () => {
   const seeder = new Umzug({
@@ -32,27 +32,27 @@ const runSeeder = async () => {
     storage: new SequelizeStorage({ sequelize, tableName: 'seeder_meta' }),
     context: sequelize.getQueryInterface(),
     logger: console,
-  })
+  });
 
-  const seeds = await seeder.up()
+  const seeds = await seeder.up();
 
   console.log('Seeds up to date', {
     files: seeds.map((seed) => seed.name),
-  })
-}
+  });
+};
 
 const connectToDatabase = async () => {
   try {
-    await sequelize.authenticate()
-    await runMigrations()
-    await runSeeder()
-    console.log('Connected to the database')
+    await sequelize.authenticate();
+    await runMigrations();
+    await runSeeder();
+    console.log('Connected to the database');
   } catch (err) {
-    console.log('Failed connecting to the database')
-    return process.exit(1)
+    console.log('Failed connecting to the database');
+    return process.exit(1);
   }
 
-  return null
-}
+  return null;
+};
 
-module.exports = { connectToDatabase, sequelize }
+module.exports = { connectToDatabase, sequelize };

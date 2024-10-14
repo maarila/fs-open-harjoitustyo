@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import './App.css'
-import vesipaasky from './assets/1-liian-myohaan-vesipaasky.jpg'
-import Book from './components/book'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './App.css';
+import vesipaasky from './assets/1-liian-myohaan-vesipaasky.jpg';
+import Book from './components/book';
 
 function App() {
-  const [books, setBooks] = useState([])
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/books').then((response) => {
-      setBooks(response.data)
-    })
-  }, [])
+      setBooks(response.data);
+    });
+  }, []);
 
   return (
     <>
@@ -28,7 +28,7 @@ function App() {
         ))}
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
