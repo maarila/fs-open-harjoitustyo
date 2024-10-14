@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 import vesipaasky from './assets/1-liian-myohaan-vesipaasky.jpg'
+import Book from './components/book'
 
 function App() {
   const [books, setBooks] = useState([])
@@ -23,9 +24,7 @@ function App() {
       />
       <div className="book">
         {books.map((book) => (
-          <p key={book.id}>
-            {book.title} ({book.originalTitle}, {book.originalPublishedYear})
-          </p>
+          <Book key={book.id} book={book} />
         ))}
       </div>
     </>
