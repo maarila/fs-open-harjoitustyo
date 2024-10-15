@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import './App.css';
 import vesipaasky from './assets/1-liian-myohaan-vesipaasky.jpg';
 import Book from './components/Book';
+import bookService from './services/books';
 
 function App() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/books').then((response) => {
-      setBooks(response.data);
-    });
+    bookService.getAll().then((books) => setBooks(books));
   }, []);
 
   return (
