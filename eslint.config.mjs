@@ -9,6 +9,7 @@ export default [
   { files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' } },
   {
     languageOptions: { globals: globals.node },
+    settings: { react: { version: '18.3' } },
     plugins: {
       '@stylistic/js': stylisticJs,
     },
@@ -25,7 +26,7 @@ export default [
     },
   },
   {
-    ignores: ['dist/**'],
+    ignores: ['dist/**', 'client/**'],
   },
   pluginReact.configs.flat.recommended,
 ];

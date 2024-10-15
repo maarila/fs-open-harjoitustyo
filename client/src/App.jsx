@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import vesipaasky from './assets/1-liian-myohaan-vesipaasky.jpg';
-import Book from './components/book';
+import Book from './components/Book';
 
 function App() {
   const [books, setBooks] = useState([]);

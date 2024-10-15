@@ -47,8 +47,11 @@ const connectToDatabase = async () => {
     await runMigrations();
     await runSeeder();
     console.log('Connected to the database');
-  } catch (err) {
-    console.log('Failed connecting to the database');
+  } catch (error) {
+    console.log(
+      'Failed connecting to the database with error: ',
+      error.message
+    );
     return process.exit(1);
   }
 
