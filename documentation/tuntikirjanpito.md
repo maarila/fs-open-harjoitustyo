@@ -10,4 +10,5 @@
 | 13.10. | 1,5  | frontendin pohja |
 | 14.10. | 2  | pohja frontendin testaamiselle, ESLint, Prettier, refaktorointia |
 | 15.10. | 2  | ESLintin viimeistely, refaktorointia, kirja-CRUDin pohja fronttiin |
-| yht   | 12,5  | |
+| 16.10. | 1,5  | kirja-CRUDia |
+| yht   | 14  | |
