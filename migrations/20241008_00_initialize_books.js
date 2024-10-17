@@ -31,6 +31,9 @@ async function up({ context: queryInterface }) {
     translator: {
       type: Sequelize.TEXT,
     },
+    image_path: {
+      type: Sequelize.TEXT,
+    },
     created_at: {
       type: Sequelize.DATE,
       allowNull: false,

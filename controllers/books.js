@@ -20,14 +20,21 @@ router.get('/:id', bookFinder, async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  console.log(req.body);
   const book = await Book.create(req.body);
   res.json(book);
 });
 
 router.put('/:id', bookFinder, async (req, res) => {
-  if (req.book) {
-    // do necessary changes
+  const currentBook = req.book;
+  if (currentBook) {
+    req.book.title = req.body.title;
+    req.book.originalTitle = req.body.originalTitle;
+    req.book.publishedYear = req.body.publishedYear;
+    req.book.originalPublishedYear = req.body.originalPublishedYear;
+    req.book.seriesNumber = req.body.seriesNumber;
+    req.book.originalLanguage = req.body.originalLanguage;
+    req.book.translator = req.body.translator;
+    req.book.imagePath = req.body.imagePath;
     await req.book.save();
     res.json(req.book);
   } else {

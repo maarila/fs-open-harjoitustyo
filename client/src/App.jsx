@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import vesipaasky from './assets/1-liian-myohaan-vesipaasky.jpg';
 import Book from './components/Book';
 import bookService from './services/books';
 
@@ -73,18 +72,13 @@ function App() {
 
   return (
     <>
-      <h2>Keltainen kirjasto v0.001</h2>
-      <img src={vesipaasky} width="200" alt="kirja1" />
-      <img
-        src={'/public/2-kerro-minulle-zorbas.jpg'}
-        width="200"
-        alt="kirja2"
-      />
+      <h2>Keltainen kirjasto v0.01</h2>
       <div className="book">
         {books.map((book) => (
           <Book key={book.id} book={book} />
         ))}
       </div>
+      <h2>Lisää kirja</h2>
       <form onSubmit={addBook}>
         <label htmlFor="title">Kirjan nimi</label>
         <input id="title" value={title} onChange={handleTitleChange} />

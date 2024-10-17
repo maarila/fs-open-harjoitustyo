@@ -33,11 +33,13 @@ Book.init(
     translator: {
       type: DataTypes.TEXT,
     },
-    // imagePath: {
-    //   type: DataTypes.TEXT,
-    // },
+    imagePath: {
+      type: DataTypes.TEXT,
+    },
     // maybe also printing (with default 1)?
     // maybe also language where translated from?
+    // maybe also page count
+    // link to author still needed
   },
   {
     sequelize,

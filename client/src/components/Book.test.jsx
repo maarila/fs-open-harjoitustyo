@@ -12,7 +12,7 @@ test('renders basic book info', () => {
   render(<Book book={testBook} />);
 
   const element = screen.getByText(
-    'Liian myöhään vesipääsky (Too Late the Phalarope, 1953)'
+    '1. Liian myöhään vesipääsky'
   );
   expect(element).toBeDefined();
 });

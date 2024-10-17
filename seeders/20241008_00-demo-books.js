@@ -7,6 +7,7 @@ const seedBooks = [
     series_number: 1,
     original_language: 'englanti',
     translator: 'Jouko Linturi',
+    image_path: '/1-liian-myohaan-vesipaasky.jpg',
     created_at: new Date(),
     updated_at: new Date(),
   },
@@ -18,6 +19,7 @@ const seedBooks = [
     series_number: 2,
     original_language: 'kreikka',
     translator: 'Vappu Roos',
+    image_path: '/2-kerro-minulle-zorbas.jpg',
     created_at: new Date(),
     updated_at: new Date(),
   },
@@ -29,7 +31,7 @@ async function up({ context: queryInterface }) {
 
 async function down({ context: queryInterface }) {
   await queryInterface.bulkDelete('books', {
-    seriesNumber: seedBooks.map((book) => book.series_number),
+    id: seedBooks.map((book) => book.id),
   });
 }
 
