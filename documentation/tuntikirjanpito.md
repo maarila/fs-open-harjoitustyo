@@ -12,4 +12,5 @@
 | 15.10. | 2  | ESLintin viimeistely, refaktorointia, kirja-CRUDin pohja fronttiin |
 | 16.10. | 1,5  | kirja-CRUDia |
 | 17.10. | 2  | lisää kirja-CRUDia, kirjaolion muokkaus, korjauksia |
-| yht   | 16  | |
+| 18.10. | 3  | lisää kirjailija, pohja kirjailija-CRUDille ja kirjailija-CRxD |
+| yht   | 19  | |

@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Book from './components/Book';
+import Author from './components/Author';
 import bookService from './services/books';
+import authorService from './services/authors';
 
 function App() {
   const [books, setBooks] = useState([]);
+  const [authors, setAuthors] = useState([]);
   const [title, setTitle] = useState('');
   const [originalTitle, setOriginalTitle] = useState('');
   const [publishedYear, setPublishedYear] = useState('');
@@ -12,9 +15,12 @@ function App() {
   const [seriesNumber, setSeriesNumber] = useState('');
   const [originalLanguage, setOriginalLanguage] = useState('');
   const [translator, setTranslator] = useState('');
+  const [authorName, setAuthorName] = useState('');
+  const [wikiLink, setWikiLink] = useState('');
 
   useEffect(() => {
     bookService.getAll().then((books) => setBooks(books));
+    authorService.getAll().then((authors) => setAuthors(authors));
   }, []);
 
   const handleTitleChange = (event) => {
@@ -45,6 +51,14 @@ function App() {
     setTranslator(event.target.value);
   };
 
+  const handleAuthorNameChange = (event) => {
+    setAuthorName(event.target.value);
+  };
+
+  const handleWikiLinkChange = (event) => {
+    setWikiLink(event.target.value);
+  };
+
   const addBook = (event) => {
     event.preventDefault();
     const newBookObject = {
@@ -68,6 +82,21 @@ function App() {
     setSeriesNumber('');
     setOriginalLanguage('');
     setTranslator('');
+  };
+
+  const addAuthor = (event) => {
+    event.preventDefault();
+    const newAuthor = {
+      name: authorName,
+      wikiLinki: wikiLink,
+    };
+
+    authorService
+      .create(newAuthor)
+      .then((response) => setAuthors([...authors, response.data]));
+
+    setAuthorName('');
+    setWikiLink('');
   };
 
   return (
@@ -129,6 +158,23 @@ function App() {
         <br />
         <button type="submit">Tallenna</button>
       </form>
+      <h2>Lisää kirjailija</h2>
+      <form onSubmit={addAuthor}>
+        <label htmlFor="authorName">Kirjailijan nimi</label>
+        <input
+          id="authorName"
+          value={authorName}
+          onChange={handleAuthorNameChange}
+        />
+        <br />
+        <label htmlFor="wikiLink">Linkki wikipediaan:</label>
+        <input id="wikiLink" value={wikiLink} onChange={handleWikiLinkChange} />
+        <br />
+        <button type="submit">Tallenna</button>
+      </form>
+      {authors.map((author) => (
+        <Author key={author.id} author={author} />
+      ))}
     </>
   );
 }

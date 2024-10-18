@@ -14,6 +14,10 @@ Author.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    wikiLink: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   },
   {
     sequelize,

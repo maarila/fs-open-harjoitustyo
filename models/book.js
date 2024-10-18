@@ -36,10 +36,12 @@ Book.init(
     imagePath: {
       type: DataTypes.TEXT,
     },
+    authorId: {
+      type: DataTypes.INTEGER,
+    },
     // maybe also printing (with default 1)?
     // maybe also language where translated from?
     // maybe also page count
-    // link to author still needed
   },
   {
     sequelize,

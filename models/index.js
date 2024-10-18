@@ -7,8 +7,8 @@ const User = require('./user');
 // Review.belongsTo(Book)
 // User.hasMany(Review)
 // Review.belongsTo(User)
-// Author.hasMany(Book)
-// Book.belongsTo(Author)
+Author.hasMany(Book);
+Book.belongsTo(Author);
 // still missing many-to-many relation Book-User
 
 module.exports = {
