@@ -30,18 +30,25 @@ Book.init(
     originalLanguage: {
       type: DataTypes.TEXT,
     },
+    translationLanguage: {
+      type: DataTypes.TEXT,
+    },
     translator: {
       type: DataTypes.TEXT,
     },
     imagePath: {
       type: DataTypes.TEXT,
     },
+    pageCount: {
+      type: DataTypes.INTEGER,
+    },
+    printing: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1
+    },
     authorId: {
       type: DataTypes.INTEGER,
     },
-    // maybe also printing (with default 1)?
-    // maybe also language where translated from?
-    // maybe also page count
   },
   {
     sequelize,

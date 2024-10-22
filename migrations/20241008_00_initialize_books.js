@@ -28,11 +28,20 @@ async function up({ context: queryInterface }) {
     original_language: {
       type: Sequelize.TEXT,
     },
+    translation_language: {
+      type: Sequelize.TEXT,
+    },
     translator: {
       type: Sequelize.TEXT,
     },
     image_path: {
       type: Sequelize.TEXT,
+    },
+    page_count: {
+      type: Sequelize.INTEGER,
+    },
+    printing: {
+      type: Sequelize.INTEGER,
     },
     created_at: {
       type: Sequelize.DATE,
