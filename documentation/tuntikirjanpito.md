@@ -13,4 +13,5 @@
 | 16.10. | 1,5  | kirja-CRUDia |
 | 17.10. | 2  | lisää kirja-CRUDia, kirjaolion muokkaus, korjauksia |
 | 18.10. | 3  | lisää kirjailija, pohja kirjailija-CRUDille ja kirjailija-CRxD |
-| yht   | 19  | |
+| 22.10. | 1  | lisää kenttiä kirjailijaan, perusmuotoinen haku/filtteri |
+| yht   | 20 | |

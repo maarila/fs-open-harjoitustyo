@@ -17,6 +17,7 @@ function App() {
   const [translator, setTranslator] = useState('');
   const [authorName, setAuthorName] = useState('');
   const [wikiLink, setWikiLink] = useState('');
+  const [searchFilter, setSearchFilter] = useState('');
 
   useEffect(() => {
     bookService.getAll().then((books) => setBooks(books));
@@ -57,6 +58,10 @@ function App() {
 
   const handleWikiLinkChange = (event) => {
     setWikiLink(event.target.value);
+  };
+
+  const handleSearchTermChange = (event) => {
+    setSearchFilter(event.target.value);
   };
 
   const addBook = (event) => {
@@ -101,9 +106,16 @@ function App() {
 
   return (
     <>
+      <h3>haku</h3>
+      <label htmlFor="search">kirjoita hakuehto</label>
+      <input
+        id="search"
+        value={searchFilter}
+        onChange={handleSearchTermChange}
+      />
       <h2>Keltainen kirjasto v0.01</h2>
       <div className="book">
-        {books.map((book) => (
+        {books.filter((book) => book.title.includes(searchFilter)).map((book) => (
           <Book key={book.id} book={book} />
         ))}
       </div>
