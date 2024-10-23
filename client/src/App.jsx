@@ -93,7 +93,7 @@ function App() {
     event.preventDefault();
     const newAuthor = {
       name: authorName,
-      wikiLinki: wikiLink,
+      wikiLink: wikiLink,
     };
 
     authorService
@@ -115,9 +115,11 @@ function App() {
       />
       <h2>Keltainen kirjasto v0.01</h2>
       <div className="book">
-        {books.filter((book) => book.title.includes(searchFilter)).map((book) => (
-          <Book key={book.id} book={book} />
-        ))}
+        {books
+          .filter((book) => book.title.includes(searchFilter))
+          .map((book) => (
+            <Book key={book.id} book={book} />
+          ))}
       </div>
       <h2>Lisää kirja</h2>
       <form onSubmit={addBook}>

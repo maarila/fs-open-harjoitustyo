@@ -14,4 +14,5 @@
 | 17.10. | 2  | lisää kirja-CRUDia, kirjaolion muokkaus, korjauksia |
 | 18.10. | 3  | lisää kirjailija, pohja kirjailija-CRUDille ja kirjailija-CRxD |
 | 22.10. | 1  | lisää kenttiä kirjailijaan, perusmuotoinen haku/filtteri |
-| yht   | 20 | |
+| 23.10. | 2  | lisää U kirjailija-CRxDiin, lisää arvostelu, lisää käyttäjä |
+| yht   | 22 | |

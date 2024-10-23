@@ -10,7 +10,7 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    numericalScore: {
+    rating: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

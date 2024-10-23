@@ -10,18 +10,22 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     username: {
       type: DataTypes.STRING,
       unique: true,
       allowNull: false,
     },
-    name: {
+    passwordHash: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     role: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
